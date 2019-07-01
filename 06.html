@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Yêu cầu bài toán: nhập mail, check xem có đúng cú pháp và hiển thị ra mail+kết quả -->
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var br ="<br>";
+		function checkMail(){
+		var email = document.getElementById("inputMail").value;
+		var patt =/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;  //JS RegExp email
+		var result;
+		if(patt.test(email)){
+			result="hợp lệ";
+		}else{
+			result="không hợp lệ!!!";
+		}
+		var xhtml ="Mail "+"<b>"+email+"</b>"+" là một địa chỉ " +result;
+		document.getElementById("rs").innerHTML =xhtml;
+		}
+		
+	</script>
+	<style type="text/css">
+		#content{
+			text-align: center;margin: 100px auto;border: 2px solid #5F9EA0;width: 500px;height: 50px;padding: 20px;
+		}
+		b{
+			color: 	#FF4500;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<label for="">Email</label>
+		<input type="text" id="inputMail">
+		<input type="button" value="CHECK" onclick="checkMail()">
+		<div id="rs"></div>
+	</div>
+</body>
+</html>
