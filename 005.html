@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		var br ="<br>";
+		function thaydoi() {
+			var str =document.getElementById("text").innerHTML; // lấy ra toàn bộ code html của id text
+			// alert(str);
+			var html ='<div class="newAdd">'+'<form action="" method="">'+'Username '+'<input type="text" placeholder="username" >'+br+'Password '+'<input type="text" placeholder="password" >'+br+'<input type="button" value="LOGIN" >' +'</form>'+br+
+				'<div>'+'<img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/47679870_2572410432776596_9041747984554917888_n.jpg?_nc_cat=109&_nc_oc=AQlN8QWIOFx4Ar2UtcF68HSEb-Ry_OjxX9FrvanfY5F82RCjDU6oGmZZ45sA63HuF8s&_nc_ht=scontent.fhan2-3.fna&oh=be099689d6e785a90db4d0bb8f46c252&oe=5DB62512">' +'</div>'+'</div>'; // 1 form
+			str =str.replace(str,html); // thay thế str bằng form
+			document.getElementById("text").innerHTML =str; // đổ lại giá trị vào thành phần có id text
+		}
+	</script>
+	<style type="text/css">
+
+		.newAdd{
+			border: 2px solid green;
+		}
+		
+		b{
+			color: red;
+
+		}
+
+		#content{
+			width: 700px;
+			margin: 20px auto;
+			border: 2px solid #CCC;
+			text-align: center;
+			padding: 10px;
+		}
+		.prop{
+			list-style: inside;
+			text-align: center;
+			line-height: 24px;
+		}
+		input[type=button]{
+			padding: 4px 10px;
+			display: block;
+			margin: 10px auto;
+		}
+
+		#text img{
+			width: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<div id="text">
+			<div class="prop">Đặng Đình Sĩ</div>
+			<div class="prop">Ngọc Nguyễn</li>
+			<div class="prop">Thanh Ngọc</div>
+			<div class="prop"><img src="https://scontent.fhan2-1.fna.fbcdn.net/v/t1.0-9/59628335_2909506909066945_19352362426564608_n.jpg?_nc_cat=103&_nc_oc=AQnTtcGQPlo7LLCxCJoz2053CaB6RJz0N_gydWOdtgqYq8SVo0cpXb10PChrHoF5sXE&_nc_ht=scontent.fhan2-1.fna&oh=a45c2c67b76c0f6ee06b5c5c8b8b0c8b&oe=5DB1A6EF" alt=""></div>
+			<div class="prop"><img src="https://scontent.fhan2-3.fna.fbcdn.net/v/t1.0-9/47679870_2572410432776596_9041747984554917888_n.jpg?_nc_cat=109&_nc_oc=AQlN8QWIOFx4Ar2UtcF68HSEb-Ry_OjxX9FrvanfY5F82RCjDU6oGmZZ45sA63HuF8s&_nc_ht=scontent.fhan2-3.fna&oh=be099689d6e785a90db4d0bb8f46c252&oe=5DB62512"></div>
+			<input type="button" id="nut" value="Insert link" onclick="thaydoi()">
+		</div>
+	</div>
+	
+
+
+
+
+	
+</body>
+</html>
+
+<!-- Yêu cầu bài toán:
+ thay thế 1 chuỗi html có sẵn bằng 1 chuỗi khác-->

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example 004</title>
+	<!-- Tách từ chuỗi người dùng nhập vào(chuẩn hóa trước khi tách) và in ra 3 phần họ,đệm,tên.  -->
+	<script type="text/javascript">
+
+function kiemtra(){
+var br ="<br>";
+var result="";
+var xhtml="";
+var name = document.getElementById("inputName").value;
+if(name.length!=0){     // nếu người dùng có nhập vào chuỗi có độ dài >0
+	var rs =xulistr(name);
+	result ="Họ:"+ rs.slice(0,rs.indexOf(" "))+br;
+ 	var result2 =rs.slice(rs.indexOf(" ")+1,rs.lastIndexOf(" "));
+	if(result2!=""){
+		result +="Đệm:" +result2+br;
+	}else{
+		result+= "Đệm: Không có tên đệm"+br;
+	}
+	result +="Tên:"+ rs.slice(rs.lastIndexOf(" ")+1);
+	xhtml= "<b>Kết quả là:</b>"+br +result;
+	
+}else{
+	result= "mày đã nhập cc gì đâu????";  // người dùng không nhập input
+}
+document.getElementById("result").innerHTML =xhtml;
+}
+function xulistr(str){
+str =str.replace(/^\s+/gm,"");
+str =str.replace(/\s+$/gm,"");      /// xóa các khoảng trắng dư thừa sử dụng regular ex
+str=str.replace(/\s+/gm," ");
+return str;
+}
+
+	</script>
+	<style type="text/css">
+		#content{
+			padding: 10px;
+			border: 1px solid black;
+			width: 180px;
+		}
+		b{
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<div id="form">
+			<input type="text" id="inputName">
+			<input type="button" onclick="kiemtra()" value="OK" >
+		</div>
+		<div id="result"></div>
+	</div>
+</body>
+</html>

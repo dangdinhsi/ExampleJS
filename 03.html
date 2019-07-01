@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <!-- nhập vào 2 số từ bàn phím, tính tổng các số chẵn -->
+	<script type="text/javascript">
+	function tinhtong(){
+		var br ="<br>";
+		var html ="";
+		var sum=0;
+		var n1 = document.getElementById("so1").value;
+		var n2 =document.getElementById("so2").value;
+		n1 =parseInt(n1);
+		n2=parseInt(n2);
+		for (var i = n1; i <=n2; i++) {
+			if(i%2==0){
+				html =html+i+br; // phép cộng chuỗi
+				sum=sum+i;    // phép cộng số nguyên
+			}
+		}
+		document.getElementById("result").innerHTML ="Các số chẵn là:"+br+ html;
+		document.getElementById("tong").innerHTML ="Tổng: "+sum;
+	}
+
+
+	</script>
+
+	<style type="text/css">
+		#content{
+			text-align: center;
+			padding: 10px;
+			margin-top: 100px;
+			margin-left: 200px;
+			border: 1px solid green;
+			width: 800px;
+		}
+		#result{
+			border: 1px solid red;
+			padding: 5px;
+			margin-top: 10px
+		}
+		.phom{
+			width: 800px;
+		
+		}
+		#tong{
+			margin-top: 20px;
+			text-align: center;
+			border: 1px solid yellow;
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<div class="phom">
+			<input type="text" id="so1">
+			<input type="text" id="so2">
+			<input type="button" onclick="tinhtong()" value="Tổng">
+		</div>
+	
+	<div id="result"></div>
+	<div id="tong"></div>
+	</div>
+</body>
+</html>

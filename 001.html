@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script type="text/javascript">
+		var br ="<br>";
+	function getin(){
+
+var n = document.getElementById("nid").value;
+  n =parseInt(n);
+  var html ="day cac so la" +br;
+for(var i=0;i<=n;i++){
+	html = html+"so thu " +parseInt(i+1)+": "+i+br;
+}
+document.getElementById("rs").innerHTML =html;
+	}
+
+	</script>
+</head>
+<body>
+	<form action="" method="get">
+		<input type="text" id="nid">
+		<input type="button" name="" onclick="getin()" value="IN RA">
+	</form>
+	<div id="rs"></div>
+</body>
+</html>
